@@ -1,0 +1,19 @@
+services:
+  vocechat:
+    image: privoce/vocechat-server:latest
+    container_name: messenger_vocechat
+    restart: always
+    command: ["--network.frontend_url", "${MESSENGER_URL:-https://chat.bergerdd.de}"]
+    volumes:
+      - ./data:/home/vocechat-server/data
+    networks:
+      - edge
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  edge:
+    external: true

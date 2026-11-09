@@ -1,0 +1,16 @@
+# Sensitive data & database
+data/*
+!data/.gitkeep
+*.db
+*.sqlite
+
+# Environment & credentials
+.env
+.env.*
+!.env.example
+
+# Logs and runtime files
+*.log
+.DS_Store
+Thumbs.db
+

@@ -1,0 +1,8 @@
+# Example Caddy Reverse Proxy Configuration for VoceChat
+# Replace chat.example.com with your actual domain
+
+chat.example.com {
+    reverse_proxy messenger_vocechat:3000 {
+        header_up X-Forwarded-Proto https
+    }
+}
